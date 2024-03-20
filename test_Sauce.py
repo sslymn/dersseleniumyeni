@@ -121,4 +121,21 @@ testClass.fpassword()
 testClass.login_list()
 testClass.t_login()
 
+
+
+# ID                => By.ID: Elemanın ID özelliğine göre bulunur. find_element(By.ID, "element_id")
+# Name: By.NAME     => Elemanın name özelliğine göre bulunur. find_element(By.NAME, "element_name")
+# Class Name        => By.CLASS_NAME: Elemanın class özelliğine göre bulunur. find_element(By.CLASS_NAME, "element_class")
+# Tag Name          => By.TAG_NAME: Elemanın tag adına göre bulunur. find_element(By.TAG_NAME, "tag_name")
+# Link Text         => By.LINK_TEXT: Bağlantı metnine (link text) göre bulunur. find_element(By.LINK_TEXT, "link_text")
+# Partial Link Text => By.PARTIAL_LINK_TEXT: Bağlantının bir kısmına göre bulunur. find_element(By.PARTIAL_LINK_TEXT, "partial_link_text")
+# XPath             => By.XPATH: XPath ifadesine göre bulunur. find_element(By.XPATH, "xpath_expression")
+# CSS Selector      => By.CSS_SELECTOR: CSS selektörüne göre bulunur. find_element(By.CSS_SELECTOR, "css_selector")
+
+
+                                            
+
+                             
+                              
+
  
