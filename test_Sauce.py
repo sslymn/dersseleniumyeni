@@ -21,7 +21,7 @@ class TestSource:
 
    
 
-    # BAŞARISIZ GİRİŞ TESTİ
+# BAŞARISIZ GİRİŞ TESTİ
     def test_invalid_login(self):
         driver = self.local()
         WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.ID, "user-name")))
@@ -37,6 +37,8 @@ class TestSource:
         testResult = errorMessage.text == "Epic sadface: Username and password do not match any user in this service"
         print(f"BAŞARISIZ GİRİŞ TESTİ SONUCU: {testResult}")
 
+
+#-Kullanıcı adı ve şifre alanları boş geçildiğinde uyarı mesajı olarak "Epic sadface: Username is required" gösterilmelidir.
     def test_both(self):
         driver = self.local()
         WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.ID, "user-name")))
@@ -50,6 +52,8 @@ class TestSource:
         testResult = errorMessage.text == "Epic sadface: Username is required"
         print(f"KULLANICI ADI VE ŞİFRE ALANLARININ BOŞ GEÇİLDİĞİ TESTİ SONUCU: {testResult}")
 
+
+#-Sadece şifre alanı boş geçildiğinde uyarı mesajı olarak "Epic sadface: Password is required" gösterilmelidir.
     def fpassword(self):
         driver = self.local()
         WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.ID, "user-name")))
@@ -63,6 +67,8 @@ class TestSource:
         testResult = errorMessage.text == "Epic sadface: Password is required"
         print(f"ŞİFRE ALANININ  BOŞ GEÇİLDİĞİ TESTİ SONUCU: {testResult}")
 
+
+#-Kullanıcı adı "locked_out_user" şifre alanı "secret_sauce" gönderildiğinde "Epic sadface: Sorry, this user has been locked out." mesajı gösterilmelidir.
     def locked_out(self):
         driver = self.local()
         userName = driver.find_element(By.ID, "user-name")
@@ -75,6 +81,10 @@ class TestSource:
         testResult = errorMessage.text == "Epic sadface: Sorry, this user has been locked out."
         print(f"ŞİFRE ALANININ  BOŞ GEÇİLDİĞİ TESTİ SONUCU: {testResult}")
 
+
+
+
+#-Kullanıcı adı "standard_user" şifre "secret_sauce" gönderildiğinde kullanıcı "/inventory.html" sayfasına gönderilmelidir. Giriş yapıldıktan sonra kullanıcıya gösterilen ürün sayısı "6" adet olmalıdır.
     def login_list(self):
         driver = self.local()
         userName = driver.find_element(By.ID, "user-name")
@@ -87,7 +97,7 @@ class TestSource:
         p_list = driver.find_elements(By.CLASS_NAME, "inventory_item")
         testResult = len(p_list) == 6
         print(f"Görütülenen sayfada 6 adet ürün vardır.: {(testResult)}")
-
+#Başarılı giriş testi acutalurl
     def t_login(self):
         driver = self.local()
         WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.ID, "user-name")))
@@ -112,6 +122,3 @@ testClass.login_list()
 testClass.t_login()
 
  
-
-
-
